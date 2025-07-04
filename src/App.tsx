@@ -1,79 +1,75 @@
-import React from 'react';
-import bg from './pic/bg-gif.gif';
-import Counter from './components/counter';
-import Running from './components/running';
-function Top() {
-  return (
-    <h1
-      style={{
-        fontFamily: "'Press Start 2P",
-        fontSize: 'clamp(2rem,8vw,100px)',
-        textAlign:'center',
-        margin:'0 0 32px 0',
-         color: 'lime',
-        textShadow: `
-          -8px -8px 0 #000000,  
-          8px -8px 0 #000000,
-          -8px 8px 0 #000000,
-          8px 8px 0 #000000,
-          0px 8px 0 #000000,
-          8px 0px 0 #000000,
-          0px -8px 0 #000000,
-          -8px 0px 0#000000
-        `
-      }}>  
-        Counter App
-    </h1>
-  );
-}
-/*
-function MBG() { //display background image in a seperate component
-                  // This function is not used in the current implementation, but can be used if needed.
-  return (
-  <div 
-  style={{
-    display :'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    }}>
-    <img 
-    src= {bg}
-    style ={{width:'100%'}}  
-  />  
-    </div>
-  );
-}
-  */
-function Main()
-{
-  return (
-    <div
-    style={{
-      backgroundImage: `url(${bg})`,
-      width: "100%",
-      display: 'flex',
-      alignItems: 'center',
-      backgroundRepeat: 'no-repeat',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      minHeight: '100vh',
-    }}>
-      <div>
-      <Top />
-      <Counter />
-      <Zooming />
-      </div>
-    </div>
-  );
-}
-function Zooming() {
-  return (
-    <div>
-      <Running />
-    </div>
-  );
-}
-export default Main ;
-export { Top, Zooming};
+import React, { useState } from "react";
+
+const App: React.FC = () => {
+    // Explicitly type the state as number
+    const [counter, setCounter] = useState<number>(0);
+
+    // Optionally, type the event handlers
+    const handleClick1 = (): void => {
+        setCounter(counter + 1);
+    };
+
+    const handleClick2 = (): void => {
+        setCounter(counter - 1);
+    };
+
+    return (
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "300%",
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: "-15%",
+                backgroundColor: "#e0f7fa"
+            }}
+        >
+            <h1>Counter App</h1>
+            <div
+                style={{
+                    fontSize: "120%",
+                    position: "relative",
+                    top: "10vh",
+                }}
+            >
+                {counter}
+            </div>
+            <div className="buttons">
+                <button
+                    style={{
+                        fontSize: "60%",
+                        position: "relative",
+                        top: "20vh",
+                        marginRight: "5px",
+                        backgroundColor: "green",
+                        borderRadius: "8%",
+                        color: "white",
+                    }}
+                    onClick={handleClick1}
+                >
+                    Increment
+                </button>
+                <button
+                    style={{
+                        fontSize: "60%",
+                        position: "relative",
+                        top: "20vh",
+                        marginLeft: "5px",
+                        backgroundColor: "red",
+                        borderRadius: "8%",
+                        color: "white",
+                    }}
+                    onClick={handleClick2}
+                >
+                    Decrement
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default App;
