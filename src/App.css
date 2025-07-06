@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 400px;
   pointer-events: none;
 }
 
@@ -35,4 +37,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.pixel-heading {
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 8rem;
+}
+
+.pixel-button {
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  font-size: clamp(1rem, 4vw, 20px);
+  background: black;
+  color: lime;
+  border: 2px solid lime;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.5s;
+}
+.pixel-button:hover {
+  background: #00ff00;
+  color: black;
 }
