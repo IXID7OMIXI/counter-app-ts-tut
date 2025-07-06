@@ -60,3 +60,29 @@
   background: #00ff00;
   color: black;
 }
+.pixel-letters {
+  font-size: clamp(2rem, 8vw, 100px);
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  color: lime;
+  top: 10vh;
+  text-shadow:
+    -8px -8px 0 #000000,  
+     8px -8px 0 #000000,
+    -8px  8px 0 #000000,
+     8px  8px 0 #000000,
+     0px  8px 0 #000000,
+     8px  0px 0 #000000,
+     0px -8px 0 #000000,
+    -8px  0px 0 #000000;
+}
+.bg-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
