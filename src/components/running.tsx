@@ -13,10 +13,9 @@ function Runing() {  //tbh i've no idea how this is working
     const timer = setTimeout(() => {
       setRunKey(k => k + 1);
     }, delay);
-    return () => clearTimeout(timer);
-  }, [runKey]); 
+    return () => clearTimeout(timer);}, [runKey]); 
 
-  return (
+    return (
     <div
       style={{
         width: '100vw',
