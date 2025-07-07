@@ -86,3 +86,54 @@
   background-position: center;
   min-height: 100vh;
 }
+
+@media (max-width: 600px) {
+  .bg-main {
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0;
+    min-height: 100vh;
+  }
+  .pixel-heading {
+    font-size: 1.3rem !important;
+    max-width: 90vw;
+    word-break: break-word;
+    padding: 0 10vw;
+  }
+  .pixel-letters {
+    /* Smaller, tighter shadow for mobile */
+    text-shadow:
+      -3px -3px 0 #000,
+       3px -3px 0 #000,
+      -3px  3px 0 #000,
+       3px  3px 0 #000,
+       0px  3px 0 #000,
+       3px  0px 0 #000,
+       0px -3px 0 #000,
+      -3px  0px 0 #000;
+    /* Keep your other mobile styles here */
+    margin-top: 100px; /* Add space above the heading/counter */
+    margin-bottom: 0px;
+    max-width: 90vw;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+    font-size: 3rem !important;
+    padding: 0 2vw;
+  }
+  .pixel-button:first-of-type {
+    margin-top: 70px; /* Adjust this value as needed */
+  }
+  .pixel-button {
+    width: 90vw;
+    max-width: 260px;
+    margin: -10px auto;
+    display: block;
+    font-size: 0.9rem !important;
+    padding: 8px 8px;
+  }
+  body, html, #root {
+    overflow-x: hidden;
+  }
+}
