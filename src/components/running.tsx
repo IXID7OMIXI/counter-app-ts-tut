@@ -5,7 +5,7 @@ function getRandomDelay(min = 2000, max = 6000) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function Runing() {  //tbh i've no idea how this is working
+function Runing() {
   const [runKey, setRunKey] = useState(0);
 
   useEffect(() => {

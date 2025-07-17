@@ -2,6 +2,7 @@ import React from 'react';
 import bg from './pic/bg-gif.gif';
 import Counter from './components/counter';
 import Running from './components/running';
+import { CounterProps } from './components/counter';
 
 function Top() {
   return (
@@ -10,16 +11,15 @@ function Top() {
     </h1>
   );
 }
-function Main()
-
-{
+function Main() {
+  const counterProps: CounterProps = { initialValue: 0 };
   return (
     <div
       className='bg-main'
       style={{ backgroundImage: `url(${bg})`}}>
       
       <Top />
-      <Counter />
+      <Counter {...counterProps} />
       <Zooming />
       
     </div>
